@@ -1,0 +1,14 @@
+.list_table {
+  width: 90%;
+  margin: auto;
+}
+tr {
+  display: flex;
+}
+tr td, tr th {
+  flex: 1;
+  height: 30px;
+}
+tr td:nth-child(4){
+  text-align: center;
+}
