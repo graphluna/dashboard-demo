@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { fetchData, filter } from './store/app.actions';
+import { fetchData, filter, clean } from './store/app.actions';
 import { getDataFiltered, getPositions } from './store/app.selectors';
 import { Search } from '../Search/search.js';
 import { List } from '../List/list';
@@ -29,7 +29,7 @@ export function App() {
   }, [dispatch])
 
   const handleReset = useCallback(() => {
-    dispatch(filter(''));
+    dispatch(clean());
   }, [dispatch])
 
   return (
