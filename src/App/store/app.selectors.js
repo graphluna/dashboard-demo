@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { age } from '../../Utils/utils.age';
 
 const getData = state => state.appReducer.data;
 
@@ -9,7 +10,7 @@ const getDataFlatted = createSelector([getData], (players) => {
     name: player.name,
     nationality: player.nationality,
     position: player.position,
-    age: '40'
+    age: age(player.dateOfBirth)
   }))
 });
 
