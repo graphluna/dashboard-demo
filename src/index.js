@@ -8,8 +8,6 @@ import { store } from './Store/store';
 import { App } from './App/app';
 import './index.css';
 
-window.store = store
-
 ReactDOM.render(
 <Provider store={store}>
   <App />
