@@ -1,4 +1,4 @@
-import { SET_DATA, SET_FILTER } from './app.actions.types.json'
+import { SET_DATA, SET_FILTER, DEL_FILTER } from './app.actions.types.json'
 
 import { AppServices } from '../app.services';
 
@@ -15,4 +15,8 @@ export const fetchData = () => async dispatch => {
 export const filter = filter => ({
   type: SET_FILTER,
   payload: filter
+})
+
+export const clean = () => ({
+  type: DEL_FILTER,
 })
