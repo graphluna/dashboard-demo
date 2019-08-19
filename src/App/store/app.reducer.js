@@ -13,7 +13,7 @@ export function appReducer(state = init, action) {
     case SET_FILTER:
       return { ...state, filter: payload }
     case DEL_FILTER:
-          return { ...state, filter: init.filter }
+      return { ...state, filter: init.filter }
     default:
       return state
   }
