@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './list.css';
 
 export function List({ heads, data }) {
   const headList = heads.map((head, inx) => <th key={inx}>{head}</th>);
@@ -23,7 +24,7 @@ export function List({ heads, data }) {
   })
 
   return (
-    <table>
+    <table className="list_table">
       <thead>
         <tr>{headList}</tr>
       </thead>
