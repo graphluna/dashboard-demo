@@ -1,9 +1,8 @@
 import React, { useEffect, useCallback } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
-
 import { fetchData, filter, clean } from './store/app.actions';
 import { getDataFiltered, getPositions } from './store/app.selectors';
+import { formdata } from '../Utils/utils.formdata';
 import { Search } from '../Search/search.js';
 import { List } from '../List/list';
 import './app.css';
@@ -19,13 +18,8 @@ export function App() {
 
   const handleSearch = useCallback(e => {
     e.preventDefault();
-    let form = new FormData(e.target)
-    let search = {
-      name: form.get('name'),
-      position: form.get('position'),
-      age: form.get('age'),
-    }
-    dispatch(filter(search));
+    let dataToSend = formdata(e.target)
+    dispatch(filter(dataToSend));
   }, [dispatch])
 
   const handleReset = useCallback(() => {
