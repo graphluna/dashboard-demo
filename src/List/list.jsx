@@ -1,23 +1,26 @@
 import * as React from 'react';
 
-import { Head } from './components/head';
-import { Row } from './components/row';
-import { Cell } from './components/cell';
-
 export function List({ heads, data }) {
+  const headList = heads.map((head, inx) => <th key={inx}>{head}</th>);
 
-  const headList = heads.map((head, inx) => <Head key={inx}>{head}</Head>);
-  
-  console.log(data)
-  const dataList = data.map((dataItem, inx) => {
-    let dataItemProps = Object.keys(dataItem);
+  function createRow({ name, nationality, position, age }) {
     return (
-      <Row key={inx}>
-        {dataItemProps.map((prop, inx) => <Cell key={inx} text={dataItem[prop]} />)}
-      </Row>
-    ); 
+      <>
+        <td>{name}</td>
+        <td>{nationality}</td>
+        <td>{position}</td>
+        <td>{age}</td>
+      </>
+    )
+  }
+
+  const dataList = data.map((rowData, inx) => {
+    return(
+      <tr key={inx.toString()}>
+        {createRow(rowData)}
+      </tr>  
+    )
   })
-  
 
   return (
     <table>
