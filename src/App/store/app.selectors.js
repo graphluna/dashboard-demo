@@ -25,6 +25,6 @@ export const getDataFiltered = createSelector(
   [getFilter, getDataFlatted],
   (filter, players) => {
     if(!filter) return players;
-    return players.filter(player => player.name === filter.name && player.position === filter.position && player.age === filter.age)
+    return players.filter(player => player.name === filter.name && player.position === filter.position && player.age === Number(filter.age))
   }  
 );
