@@ -1,0 +1,5 @@
+{
+  "SET_DATA": "SET_DATA",
+  "SET_FILTER": "SET_FILTER",
+  "DEL_FILTER": "DEL_FILTER"
+}
